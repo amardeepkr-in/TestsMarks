@@ -8,14 +8,14 @@ WORKDIR /app
 # ---- Dependencies ----
 FROM base AS deps
 
-COPY package.json package-lock.json ./
-RUN npm ci --omit=dev
+COPY package.json ./
+RUN npm install --omit=dev
 
 # ---- Build ----
 FROM base AS builder
 
-COPY package.json package-lock.json ./
-RUN npm ci
+COPY package.json ./
+RUN npm install
 
 COPY . .
 
