@@ -238,6 +238,7 @@ export const AuditActions = {
   LOGOUT: 'logout',
   LOGIN_FAILED: 'login_failed',
   PASSWORD_CHANGED: 'password_changed',
+  ADMIN_LOGIN: 'admin_login',
 
   // Submissions
   SUBMISSION_CREATED: 'submission_created',
