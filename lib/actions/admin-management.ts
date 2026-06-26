@@ -1,7 +1,6 @@
 'use server';
 
 import db from '../db';
-import { AdminUser } from '../types';
 import { revalidatePath } from 'next/cache';
 import { headers } from 'next/headers';
 import { hashPassword } from '../utils/password';

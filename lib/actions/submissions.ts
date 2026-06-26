@@ -1,16 +1,13 @@
 'use server';
 
 import db from '../db';
-import { Submission, AppSettings } from '../types';
+import { Submission } from '../types';
 import { revalidatePath } from 'next/cache';
-import { headers } from 'next/headers';
 import { submissionSchema } from '../validation/schemas';
-import { createAuditLog, AuditActions, EntityTypes } from '../services/audit';
 import { hasPermission, Permission } from '../services/rbac';
 import { requireAuth } from '../auth';
-import { getClientIp } from '../middleware/ratelimit';
 import { getSettings } from './settings';
-import { processFileUpload, type FileUploadResult } from './file-upload';
+import { processFileUpload } from './file-upload';
 import { queueEmail, getSubmissionConfirmationEmail, getMarksUpdateEmail } from '../services/email';
 
 /**

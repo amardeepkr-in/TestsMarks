@@ -2,11 +2,8 @@
 
 import crypto from 'crypto';
 import db from '../db';
-import { revalidatePath } from 'next/cache';
 import { headers } from 'next/headers';
 import { hashPassword, validatePasswordStrength } from '../utils/password';
-import { passwordChangeSchema } from '../validation/schemas';
-import { createAuditLog, AuditActions, EntityTypes } from '../services/audit';
 import { queueEmail } from '../services/email';
 
 /**

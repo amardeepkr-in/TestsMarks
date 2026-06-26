@@ -7,7 +7,6 @@ import { hashPassword, verifyPassword } from '../utils/password';
 import { createAuditLog, AuditActions, EntityTypes } from '../services/audit';
 import { getClientIp } from '../middleware/ratelimit';
 import { createSession, destroySession, validateSession } from '../auth';
-import type { AuthUser } from '../auth';
 
 /**
  * Admin login result type
